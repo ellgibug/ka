@@ -121,6 +121,11 @@
                         </div>
                     </div>
                 </div>
+
+
+                <div class="md-layout md-alignment-center">
+                    <md-button class="md-success md-lg" @click="openModal">Записаться</md-button>
+                </div>
             </div>
 
         </div>
@@ -158,6 +163,15 @@
                         total_price: '47 000'
                     },
                 ]
+            }
+        },
+        methods: {
+            openModal: function() {
+                this.$emit("open");
+
+                ym(66338023,'reachGoal','prices-button');
+
+                return true;
             }
         }
 

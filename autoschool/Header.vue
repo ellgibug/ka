@@ -6,7 +6,7 @@
                         class="md-layout-item md-size-70 md-small-size-70 md-xsmall-size-100"
                 >
                     <h1 class="title">Открыт набор на категорию В МКПП и АКПП</h1>
-                    <div class="subtitle" >
+                    <div class="subtitle" @click="openModal('header')">
                         Начните обучение с полноценного пробного занятия по вождению перед заключением договора
                     </div>
                     <div class="phones">
@@ -24,6 +24,17 @@
     export default {
         name: "Header",
 
+        methods: {
+            openModal: function() {
+
+                this.$emit("open");
+
+                ym(66338023,'reachGoal','header-button');
+
+                return true;
+
+            }
+        }
 
     }
 </script>
@@ -47,7 +58,8 @@
         border-radius: 6px;
         box-shadow: 0 0 0 10px rgba(#bdbdbd, 0.5), 0 0 0 10px rgba(#f9f9f9, 0.5);
         animation: subtitle 2s linear infinite;
-        font-weight: 500
+        font-weight: 500;
+        cursor: pointer;
     }
 
     @keyframes subtitle {
